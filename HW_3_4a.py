@@ -9,3 +9,4 @@ sum =int(d1) + int(d2) + int(d3)
 
 print("Sum of the digits of the number: ", sum)
 
+
