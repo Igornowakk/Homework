@@ -1,4 +1,4 @@
-lst = [1, 2, 3, 4, 5, 6]
+lst = [2, 3, 4]
 a = len(lst)
 y = len(lst) % 2
 
@@ -12,7 +12,6 @@ elif y == 1:
     c = lst[0:(int(b) + 1)]
     d = lst[(int(b) + 1):int(a)]
     print([c, d])
-else:
-    print([[], []])
+
 
 
