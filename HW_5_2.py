@@ -1,6 +1,6 @@
 number = int(input("Enter a number greater than zero: "))
 
-if number == 0:
+if number <= 0:
     print("The number must be greater than zero.")
 else:
     produkt_of_number = 1
