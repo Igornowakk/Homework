@@ -5,3 +5,5 @@ def correct_sentence(a):
 
 a = input("Enter a sentence: ")
 print(correct_sentence(a))
+
+

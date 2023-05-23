@@ -6,3 +6,4 @@ b = input("Enter your age: ")
 
 print(say_hi(a, b))
 
+
