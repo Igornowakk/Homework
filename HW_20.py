@@ -9,3 +9,4 @@ gen = generate_cube_numbers(100)
 print(next(gen))
 print(next(gen))
 print(next(gen))
+
