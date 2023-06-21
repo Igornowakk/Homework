@@ -27,22 +27,22 @@ class Group:
 
     def add_student(self, student):
         self.group.add(student)
+        return self.group
 
     def delete_student(self, student):
         for student in self.group:
             if student.last_name in self.group:
                 self.group.remove(student)
+        return self.group
 
     def find_student(self, last_name):
-        found_students = []
         for student in self.group:
             if student.last_name == last_name:
-                found_students.append(student)
-        return found_students
+                return student
 
     def __str__(self):
-        all_students = ''
-        return f'Number:{self.number}\n {all_students} '
+        all_students = self.group
+        return f'Number:{self.number}\n {all_students}'
 
 
 st1 = Student('Male', 30, 'Steve', 'Jobs', 'AN142')
