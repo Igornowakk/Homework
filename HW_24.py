@@ -32,27 +32,29 @@ class Group:
     def delete_student(self, student):
         for student in self.group:
             if student.last_name in self.group:
-                self.group.remove(student)
-        return self.group
+                return self.group.pop(student)
 
     def find_student(self, last_name):
         for student in self.group:
             if student.last_name == last_name:
-                return student
+                return Student
+            else:
+                return None
 
     def __str__(self):
-        all_students = self.group
+        all_students = "\n".join(str(student) for student in self.group)
         return f'Number:{self.number}\n {all_students}'
 
 
 st1 = Student('Male', 30, 'Steve', 'Jobs', 'AN142')
 st2 = Student('Female', 25, 'Liza', 'Taylor', 'AN145')
+print(st1, st2)
 gr = Group('PD1')
 gr.add_student(st1)
 gr.add_student(st2)
 print(gr)
 print(gr.find_student('Jobs'))   # 'Steve Jobs'
-print(gr.find_student('Jobs2'))  # None
+print(gr.find_student('Kobs2'))  # None
 
 gr.delete_student('Taylor')
 print(gr) # Only one student
