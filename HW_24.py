@@ -37,7 +37,7 @@ class Group:
     def find_student(self, last_name):
         for student in self.group:
             if student.last_name == last_name:
-                return Student
+                return student
             else:
                 return None
 
