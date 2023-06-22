@@ -1,3 +1,5 @@
+class GroupFullException(Exception):
+    pass
 class Human:
 
     def __init__(self, gender, age, first_name, last_name):
@@ -26,36 +28,51 @@ class Group:
         self.group = set()
 
     def add_student(self, student):
-        self.group.add(student)
+        if len(self.group) >= 10:
+            print("The group is already full.")
+        else:
+            self.group.add(student)
         return self.group
-
-    def delete_student(self, student):
-        for student in self.group:
-            if student.last_name in self.group:
-                return self.group.pop(student)
 
     def find_student(self, last_name):
         for student in self.group:
             if student.last_name == last_name:
-                return Student
+                return student
             else:
                 return None
+
+    def delete_student(self, last_name):
+        student = self.find_student(last_name)
+        if student:
+            return self.group.pop()
+        return None
 
     def __str__(self):
         all_students = "\n".join(str(student) for student in self.group)
         return f'Number:{self.number}\n {all_students}'
 
-
 st1 = Student('Male', 30, 'Steve', 'Jobs', 'AN142')
 st2 = Student('Female', 25, 'Liza', 'Taylor', 'AN145')
-print(st1, st2)
+st3 = Student('Female', 25, 'Ana', 'Novak', 'AN145')
+st4 = Student('Female', 27, 'Diana', 'Ran', 'AN145')
+st5 = Student('Male', 25, 'Ivan', 'Tor', 'AN145')
+st6 = Student('Male', 31, 'Dylan', 'Mor', 'AN145')
+st7 = Student('Male', 25, 'Jan', 'Ten', 'AN145')
+st8 = Student('Female', 34, 'Bru', 'Len', 'AN145')
+st9 = Student('Female', 32, 'Kirk', 'Dug', 'AN145')
+st10 = Student('Female', 26, 'Mira', 'Yellow', 'AN145')
+st11 = Student('Female', 26, 'Kira', 'Bum', 'AN145')
+print(st1, st2, st3, st4, st5, st6, st7, st8, st9, st10, st11)
 gr = Group('PD1')
 gr.add_student(st1)
 gr.add_student(st2)
+gr.add_student(st3)
+gr.add_student(st4)
+gr.add_student(st5)
+gr.add_student(st6)
+gr.add_student(st7)
+gr.add_student(st8)
+gr.add_student(st9)
+gr.add_student(st10)
+gr.add_student(st11)
 print(gr)
-
-print(gr.find_student('Jobs'))   # 'Steve Jobs'
-print(gr.find_student('Kobs2'))  # None
-
-gr.delete_student('Taylor')
-print(gr) # Only one student
